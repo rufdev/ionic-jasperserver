@@ -1,0 +1,7 @@
+{
+  "name": "bluetoothapp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
