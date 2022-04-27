@@ -1,0 +1,35 @@
+//add this to C:\Jaspersoft\jasperreports-server-cp-8.0.0\apache-tomcat\webapps\jasperserver\WEB-INF\web.xml... then add your domain sa kanang allowed origins in my case localhost:8080
+
+
+<filter>
+    <filter-name>CorsFilter</filter-name>
+    <filter-class>org.apache.catalina.filters.CorsFilter</filter-class>
+    <init-param>
+        <param-name>cors.allowed.origins</param-name>
+        <param-value>http://localhost:8100</param-value>
+    </init-param>
+    <init-param>
+        <param-name>cors.allowed.methods</param-name>
+        <param-value>GET,POST,HEAD,PUT,OPTIONS,DELETE,PATCH</param-value>
+    </init-param>
+    <init-param>
+        <param-name>cors.allowed.headers</param-name>
+        <param-value>Cache-Control,X-Suppress-Basic,Origin,Accept,X-Requested-With,Content-Type,Pragma,accept-timezone,withCredentials,X-Remote-Domain,X-Is-Visualize,x-jrs-base-url,Content-Disposition,Content-Description,Content-Type,X-Requested-With,Accept,Accept-Encoding,Accept-Language,Origin,Access-Control-Request-Method,Access-Control-Request-Headers,Connection,Host,authorization,Options</param-value>
+    </init-param>
+    <init-param>
+        <param-name>cors.exposed.headers</param-name>
+        <param-value>Access-Control-Allow-Origin,Access-Control-Allow-Credentials,Authorization</param-value>
+    </init-param>
+    <init-param>
+        <param-name>cors.support.credentials</param-name>
+        <param-value>true</param-value>
+    </init-param>
+    <init-param>
+        <param-name>cors.preflight.maxage</param-name>
+        <param-value>300</param-value>
+    </init-param>
+</filter>
+<filter-mapping>
+    <filter-name>CorsFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+</filter-mapping>
